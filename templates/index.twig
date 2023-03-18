@@ -2,6 +2,10 @@
 
 {% set competitors = craft.entries
     .section('competitors')
+	.with([
+		'image',
+		'country.flag'
+	])
     .orderBy('score asc')
     .all()
 %}
